@@ -2,7 +2,8 @@ import ctypes
 
 class UserArray(ctypes.Structure):
     _fields_ = [('n', ctypes.c_int),
-                ('x', ctypes.c_double)]
+                ('x', ctypes.c_double),
+                ('f_value', ctypes.CFUNCTYPE(None, ctypes.c_double, ctypes.c_double))]
 
 #    def __init__(self):
 #        self.n = 0
