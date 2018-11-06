@@ -1,0 +1,16 @@
+This is a small example I created to test calling a simple C function 
+in python where the input for the C function is a user defined struct.
+
+To call the python function, the user must first compile the shared
+object file for the 'test.c' program. For example, this can be done
+by first creating the standard object file 'test.o' then using this
+object file to create 'libtest.so' as follows:
+
+        gcc -c -Wall -Werror -fpic test.c
+        gcc -shared -o libtest.so test.o
+
+Once 'libtest.so' has been created, the user can then call the python
+function 'problem.py' which initializes the struct and calls the C
+function 'test' using the command:
+
+        python problem.py
